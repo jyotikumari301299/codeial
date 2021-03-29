@@ -1,0 +1,10 @@
+// index.js is my entry point to all the routes
+
+const express = require('express');
+const router = express.Router();
+// we need to require controller first before using it
+const homeController = require('../controllers/home_controller');
+
+router.get('/',homeController.home);
+
+module.exports = router;

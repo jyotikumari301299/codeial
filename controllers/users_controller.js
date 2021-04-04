@@ -28,7 +28,7 @@ module.exports.signIn = (req,res)=>{
     })
 }
 
-//Get the sign up data
+//inserting the sign up data
 module.exports.create = (req,res)=>{
     if(req.body.password != req.body.confirm_password)
     {

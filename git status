@@ -1,0 +1,77 @@
+[33mcommit 0ce1857e09c71c706206b5ebef2607da8eaa3691[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: jyotisingh301299 <jyotisingh301299@gmail.com>
+Date:   Mon Apr 5 14:17:54 2021 +0530
+
+    deleting a post and all the comments related to that by  authorized users
+
+[33mcommit e5181e47a94d0a543597c6a8a8441ab5c5e72b80[m
+Author: jyotisingh301299 <jyotisingh301299@gmail.com>
+Date:   Sun Apr 4 21:57:28 2021 +0530
+
+    inserted the commetnts into DB
+
+[33mcommit 7c827f54cb8f901bf2de248e8b0b1fc9d8cbb8eb[m
+Author: jyotisingh301299 <jyotisingh301299@gmail.com>
+Date:   Sun Apr 4 17:03:32 2021 +0530
+
+    created comment schema with ref of user in it
+
+[33mcommit d0ad0056ee3a27c0ca36a3a11e9fc8a98b6e43e5[m
+Author: jyotisingh301299 <jyotisingh301299@gmail.com>
+Date:   Sun Apr 4 08:30:32 2021 +0530
+
+    displayed user and their corresponding post on home page
+
+[33mcommit 93b4e6c4ea816f62fb2bc125ad38c8a1e124ec3b[m
+Author: jyotisingh301299 <jyotisingh301299@gmail.com>
+Date:   Sun Apr 4 08:02:51 2021 +0530
+
+    fetched the posts from db for the viewsand populated it with user reference(ref)
+
+[33mcommit a50aec98ecbf6e4c6b41c452ce1a2e0db602f455[m
+Author: jyotisingh301299 <jyotisingh301299@gmail.com>
+Date:   Sun Apr 4 01:25:47 2021 +0530
+
+    created schema for posts and view for posts
+
+[33mcommit fa456d6fa37f193c398e19f6fbe7d11b96d6e3f6[m
+Author: jyotisingh301299 <jyotisingh301299@gmail.com>
+Date:   Sun Apr 4 01:02:31 2021 +0530
+
+    added scss directory structure
+
+[33mcommit a301979d29ed70109bf3a48fdb6009d7d8c9b8cc[m
+Author: jyotisingh301299 <jyotisingh301299@gmail.com>
+Date:   Sat Apr 3 22:56:43 2021 +0530
+
+    done with the passport and user authentication
+
+[33mcommit 5f3f2dc32ebc174ea062a30a8abcf8c933a22b18[m
+Author: jyotisingh301299 <jyotisingh301299@gmail.com>
+Date:   Thu Apr 1 01:19:18 2021 +0530
+
+    added the signup feature manuallly
+
+[33mcommit edac54b0684cf293d8ae9385e0eedfd6783e80b0[m
+Author: jyotisingh301299 <jyotisingh301299@gmail.com>
+Date:   Wed Mar 31 16:13:16 2021 +0530
+
+    added layout and partials to our web application
+
+[33mcommit 0ab381951bb9b7861ffe3f1185305e6f52550b07[m
+Author: jyotisingh301299 <jyotisingh301299@gmail.com>
+Date:   Mon Mar 29 17:48:09 2021 +0530
+
+    set up the view engine ejs
+
+[33mcommit 89f3a80b5a2e546bc497b3638b0b4bb383896135[m
+Author: jyotisingh301299 <jyotisingh301299@gmail.com>
+Date:   Mon Mar 29 16:27:23 2021 +0530
+
+    Add a controller and a router for home
+
+[33mcommit 1bc82ab49777305b442ab446fbce305176bfbaed[m
+Author: jyotisingh301299 <jyotisingh301299@gmail.com>
+Date:   Mon Mar 29 03:32:41 2021 +0530
+
+    First commit: create the directory structure and setup express server

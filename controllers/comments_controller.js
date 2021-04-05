@@ -27,3 +27,20 @@ module.exports.create = function(req,res){
     })
 }
 
+
+module.exports.destroy = (req,res)=>{
+    Comment.findById(req.params.id,(err,comment)=>{
+        if(err){ console.log("eror in deleting comments"); return res.redirect('back');  }
+        if(comment.user == req.user.id)
+        {
+            let postId = comment.post;
+
+            comment.remove();
+            Post.findByIdAndUpdate(postId, {$pull: {comments: req.params.id}}, (err,post)=>{
+                return res.redirect('back');
+            })
+        }else {
+        return res.redirect('back');}
+    })
+}
+

@@ -10,38 +10,9 @@
         <% } %>
         <div id="posts-list-container">
                 <ul>
+                  
                    <% for(post of posts) { %>
-                        <p>
-                        <% if(locals.user && locals.user.id == post.user.id) { %>
-                        <small>
-                                <a href="/posts/destroy/<%= post.id %>">delete</a>
-                        </small>
-                        <%  } %>
-                        <%= post.content %>
-                       <small> <%= post.user.name %></small>
-                        </p>
-
-                        <div class="post-comments">
-                                <% if(locals.user) { %>
-                                        <form action="/comments/create" method="post">
-                                        <input type="text" name="content" placeholder="Type here to add comment....." required>
-                                        <input type="hidden" name="post" value="<%=  post._id %>">
-                                        <input type="submit" value="Add comment">
-                                        </form>
-                                 <%  } %>
-                                 <div class="post-comments-list">
-                                         <ul id="post-comments-<%= post._id %>">
-                                                 <%  for(comment of post.comments) { %>
-                                                        <%= comment.content  %><$nbsp>
-                                                        <small>
-                                                                <%= comment.user.name %>
-                                                        </small>
-                                                        <br>
-                                                  <%  } %>
-                                         </ul>
-                                 </div>
-                        </div>
-                </li>
+                       <%- include('_post.ejs') -%>
                     <% } %>  
                 </ul>
         </div>

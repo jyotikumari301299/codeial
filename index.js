@@ -16,6 +16,9 @@ const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo')(session);
 
 const sassMiddleware = require('node-sass-middleware');
+const flash = require('connect-flash');
+// requireing middleware for flash message to send to fornt end template
+const customMWare = require('./config/middleware');
 
 app.use(sassMiddleware({
     src: './assets/scss',
@@ -65,6 +68,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
+// using flash-messages
+app.use(flash());
+// using middleware made for showing flash data to front end
+app.use(customMWare.setFlash);
 
 // USING EXPRESS ROUTER
 app.use('/',require('./routes'));

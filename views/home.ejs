@@ -1,6 +1,7 @@
-<h1>this is codeial  <%= title  %></h1>
-
-<section id="feed-posts">
+<link rel="stylesheet" href="/css/home.css">
+<div id="home-container"> 
+   <section id="activity-section"></section>
+   <section id="feed-posts">
         <h4>Posts</h4>
         <% if(locals.user){ %>
         <form action="/posts/create-posts" id="new-post-form" method="post">
@@ -10,11 +11,19 @@
         <% } %>
         <div id="posts-list-container">
                 <ul>
-                  
-                   <% for(post of posts) { %>
-                       <%- include('_post.ejs') -%>
-                    <% } %>  
+                        
+                        <% for(post of posts) { %>
+                        <%- include('_post.ejs') -%>
+                        <% } %>  
                 </ul>
         </div>
-</section>
-    
+   </section>
+
+   <section id="user-friends">
+        <h4>Friends</h4>
+        <% for(u of all_users) { %>
+                <p><a href="/users/profile/<%= u.id %>"><%= u.name %></a></p>
+                <% } %>
+   </section>
+            
+</div>

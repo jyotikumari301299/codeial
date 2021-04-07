@@ -17,6 +17,7 @@ module.exports.create = async (req, res) => {
       content: req.body.content,
       user: req.user._id,
     });
+    req.flash('success',"Post created");
     return res.redirect("back");
   } catch (err) {
     console.log("Error", err);
@@ -46,15 +47,16 @@ module.exports.destroy = async (req, res) => {
        if (post.user == req.user.id) {
         post.remove();
         // when we delete a post we have to delete all the comments related to that particular post
-        Comment.deleteMany({ post: req.params.id });
-          return res.redirect("back");
+       await Comment.deleteMany({ post: req.params.id });
+       req.flash('success',"Post and associated comments deleted!!");
+       return res.redirect("back");
        }
       else {
         return res.redirect("back");
       }
     }
       catch(err){
-          console.log("Error",err);
+          req.flash('error',err);
           return;
       }
     }

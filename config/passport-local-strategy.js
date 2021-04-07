@@ -12,15 +12,15 @@ passport.use(new LocalStrategy({
     // below line allows me to pass req as a first argument in callback
     passReqToCallback: true
     },
-    function(req,email, password, done){
+    function( req, email, password, done){
         // find a user and establish the identity
         User.findOne({email:email},function(err,user){
             if(err){ 
-                    req.flash('error',"Error in finding the user");
+                    req.flash('error',err);
                       return done(err);
             }
             if(!user || user.password != password){
-                req.flash('error',"Invalid username/password");
+               req.flash('error','Invalid username/password');
                 return done(null,false);
             }
 

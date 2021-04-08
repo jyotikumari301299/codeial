@@ -36,6 +36,10 @@ let storage =  multer.diskStorage({
   })
 
 
+//   static functions for users
+// userSchema.statics.uploadedAvatar = 
+// this basically attaches the diskstorage on multer in the storage property
+
 
 const User = mongoose.model('User',userSchema);
 

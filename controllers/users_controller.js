@@ -9,6 +9,23 @@ module.exports.profile = (req,res)=>{
     });
 }
 
+
+module.exports.update = (req,res)=>{
+    if(req.user.id == req.params.id)
+    {
+        // if user matched
+        User.findByIdAndUpdate(req.params.id, req.body, (err,user)=>{
+            console.log('inside update');
+            return res.redirect('back');
+        })
+    }
+    else
+    {
+        // user didnt matched
+        return res.status(401).send('unauthorised');
+    }
+}
+
 // rendering the signup page
 module.exports.signUp = (req,res)=>{
     if(req.isAuthenticated())

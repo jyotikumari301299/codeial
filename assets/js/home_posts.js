@@ -17,6 +17,8 @@
                 success: (data)=>{
                     let newPost = newPostDom(data.data.post);
                     $('#posts-list-container').prepend(newPost);
+                    req.flash('success',"Post created successfully!!");
+                    deletePost($(' .delete-post-button',newPost));
                 },error: (error)=>{
                     console.log(error.responseText);
                 }
@@ -55,6 +57,27 @@
       </li>
       `)
     }
+
+
+// method to delete a function from DOM
+
+let deletePost = function(deleteLink){
+  $('deleteLink').click(function(e){
+    e.preventDefault();
+
+    $.ajax({
+      type: 'get',
+      url: $(deleteLink).prop('href'),
+      success: function(data){
+        $(`#post-${data.data.post_id}`).remove();
+      },
+      error: function(error){
+        console.log(err.responseText);
+      }
+    })
+  })
+
+}
 
     createPost();
 

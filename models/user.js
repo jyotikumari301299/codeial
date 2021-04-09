@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
         type: String
     }
 }, {
-    timestamp: true
+    timestamps: true
 });
 
 // defining the storage
@@ -31,15 +31,18 @@ let storage =  multer.diskStorage({
       cb(null, path.join(__dirname,'..',AVATAR_PATH));
     },
     filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now())
+      cb(null, file.fieldname + '-' + Date.now());
     }
   })
 
 
 //   static functions for users
-// userSchema.statics.uploadedAvatar = 
+// uploaded avatar is the f=unction name
 // this basically attaches the diskstorage on multer in the storage property
-
+userSchema.statics.uploadedAvatar =  multer({storage: storage}).single('avatar');
+// why am i going to define the avatarPath
+// ANS:-I jst need this avatarPath to be available publically for the user model 
+userSchema.statics.avatarPath = AVATAR_PATH;
 
 const User = mongoose.model('User',userSchema);
 

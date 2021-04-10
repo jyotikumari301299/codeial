@@ -7,7 +7,7 @@ const User = require('../models/user');
 
 // we created some options fir encryption
 let opts = {
-    jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken,
+    jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
     secretOrKey:  "codeial"
 }
 

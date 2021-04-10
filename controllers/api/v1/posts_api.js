@@ -27,11 +27,8 @@ module.exports.index =  async function(req,res){
 module.exports.destroy = async (req, res) => {
     try {
       let post = await Post.findById(req.params.id);
-      // .id means converting the object id into string
-    //   if (post.user == req.user.id) {
        
           post.remove();
-          // when we delete a post we have to delete all the comments related to that particular post
           await Comment.deleteMany({ post: req.params.id });
           
           return res.json(200, {
@@ -40,9 +37,7 @@ module.exports.destroy = async (req, res) => {
 
 
         return res.redirect("back");
-    //   } else {
-    //     return res.redirect("back");
-    //   }
+        
     } catch (err) {
       req.json(500,{
           message: "Internal Server Error"

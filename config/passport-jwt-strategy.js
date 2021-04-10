@@ -5,7 +5,7 @@ const ExtractJWT = require('passport-jwt').ExtractJwt;
 // we imported user because we are trying to find user from the database whenever request comes in
 const User = require('../models/user');
 
-// we created some options 
+// we created some options fir encryption
 let opts = {
     jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken,
     secretOrKey:  "codeial"

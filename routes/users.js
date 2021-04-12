@@ -16,10 +16,15 @@ router.post('/create-session',passport.authenticate(
 ),usersController.createSession);
 
 
-
-
-
 router.get('/sign-out',usersController.destroySession);
+
+// for google oAuth authentication we are going to create two routes here
+// one would be when i click on the button google sign-in it takes me to google and the data is fetched from there
+// and then the second one would be when google fetches that data and sends it back to me on a route which is my callback url
+//    /auth/google is the url given by the google
+// scope is the info which we are looking to fetch
+router.get('/auth/google',passport.authenticate('google',{scope: ['profile', 'email']}));
+router.get('/auth/google/callback',passport.authenticate('google' ,{failureRedirect: 'users/sign-in'}) , usersController.createSession);
 
 
 

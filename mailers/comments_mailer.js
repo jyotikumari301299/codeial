@@ -5,6 +5,7 @@ const nodeMailer = require('../config/nodemailer');
 
 // another way of exporting a method
 // it can also be exported as module.exports = newComment
+// newComment wo function h jiske through hm mail bhej rhe h
 exports.newComment = (comment)=>{
     let htmlString = nodemailer.renderTemplate({comment: comment}, '/comments/new_comment.ejs');
     nodeMailer.transporter.sendMail({
@@ -16,7 +17,7 @@ exports.newComment = (comment)=>{
     }, (err, info)=>{
         if(err){console.log("error in sending mail",err); return;}
 
-        console.log("Mail Delievered", info);
+        console.log("Mail Delievered");
         return;
 
     });

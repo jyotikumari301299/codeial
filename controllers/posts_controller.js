@@ -1,6 +1,7 @@
 const Post = require("../models/post");
 const Comment = require("../models/comment");
 
+
 // inserting posts into DB
 // module.exports.create = (req,res)=>{
 //     Post.create({
@@ -17,7 +18,8 @@ module.exports.create = async (req, res) => {
       content: req.body.content,
       user: req.user._id,
     });
-    // xhr requext received that was send from ajax
+    // xhr requext received that was send from ajax....if we want to populate just the name of the user (we'll not want to send the
+    // password in the API ),this is how we do it!!
     if (req.xhr) {
       return res.status(200).json({
         data: {
@@ -55,8 +57,7 @@ module.exports.destroy = async (req, res) => {
     let post = await Post.findById(req.params.id);
     // .id means converting the object id into string
     if (post.user == req.user.id) {
-     
-      console.log("ajax request ************************", req.xhr);
+
       if (req.xhr) {
         post.remove();
         // when we delete a post we have to delete all the comments related to that particular post
@@ -67,9 +68,9 @@ module.exports.destroy = async (req, res) => {
           },
           message: "Post deleted!",
         });
-        }
-      
-        req.flash("success", "Post and associated comments deleted!!");
+      }
+
+      req.flash("success", "Post and associated comments deleted!!");
       return res.redirect("back");
     } else {
       return res.redirect("back");

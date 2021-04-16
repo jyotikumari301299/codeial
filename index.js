@@ -83,8 +83,10 @@ app.use(customMWare.setFlash);
 app.use('/',require('./routes'));
 
 app.listen(port, (err)=>{
+    console.log("heyyyyyyyyyy*********");
     if(err)
     {
+        console.log("errrrrrr*********");
         console.log(`Error in running the server :${err}`);
     }
     console.log(`server is running on port ${port}`);

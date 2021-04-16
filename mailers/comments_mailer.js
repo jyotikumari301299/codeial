@@ -9,7 +9,7 @@ const nodeMailer = require('../config/nodemailer');
 exports.newComment = (comment)=>{
     let htmlString = nodemailer.renderTemplate({comment: comment}, '/comments/new_comment.ejs');
     nodeMailer.transporter.sendMail({
-        from: 'Codeial <something@anything.com>',
+        from: 'coding.ninja1503@gmail.com',
         to: comment.user.email,
         subject: "New Comment published",
         html: htmlString

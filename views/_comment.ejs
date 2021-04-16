@@ -2,6 +2,7 @@
     <% if(locals.user && locals.user.id == comment.user.id) { %>
             <a href="/comments/destroy/<%= comment.id %>">delete comment</a>
      <%  } %>
+     <!-- <small><a class="delete-post-button" href="/likes/toggle/?<>">Like</a></small> -->
     <%= comment.content  %><$nbsp>
     <small>
             <%= comment.user.name %>

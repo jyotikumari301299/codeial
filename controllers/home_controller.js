@@ -1,5 +1,4 @@
 const Post = require("../models/post");
-const post = require("../models/post");
 const User = require("../models/user");
 
 module.exports.home = async function (req, res) {
@@ -10,7 +9,7 @@ module.exports.home = async function (req, res) {
       .populate({
         path: "comments",
         populate: {
-          path: "user",
+          path: "user"
         }
       });
 

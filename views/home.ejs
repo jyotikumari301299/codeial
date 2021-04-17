@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/chat_box.css">
 <div id="home-container"> 
    <section id="activity-section"></section>
    <section id="feed-posts">
@@ -25,6 +26,9 @@
                 <p><a href="/users/profile/<%= u.id %>"><%= u.name %></a></p>
                 <% } %>
    </section>
+
+   <!-- includeing chat-box -->
+   <%- include('_chat_box') -%>
             
 </div>
 

@@ -82,11 +82,8 @@
 
   let postToAjax = function () {
     $("#posts-list-container>ul>li").each(function () {
-      console.log("this", this);
       let self = $(this);
-      console.log("self", self);
       let deletebutton = $(" .delete-post-button", self);
-      console.log("deletebutton", deletebutton);
       // let postId = self.prop('id').split("-")[1];
       // console.log("postId",postId);
       deletePost(deletebutton);

@@ -19,7 +19,7 @@ socket.on('join_room', function(data){
 });
 
 
-socket.on('send_message', function(datay){
+socket.on('send_message', function(data){
     io.in(data.chatroom).emit('receive_message',data);
 })
 

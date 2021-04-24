@@ -2,7 +2,7 @@
 // all different route files out there.
 const express = require('express');
 const env = require('./config/environment');
-// const logger = require('morgan');
+const logger = require('morgan');
 
 const app = express();
 const port = 8000;
@@ -33,13 +33,15 @@ const flash = require('connect-flash');
 const customMWare = require('./config/middleware');
 const path = require('path');
 
-app.use(sassMiddleware({
-    src: path.join(__dirname, env.asset_path, 'scss'),
-    dest: path.join(__dirname,env.asset_path, 'css'),
-    debug: true,
-    outputStyle: 'extended',
-    prefix: '/css'
-}));
+if(env.name == 'development'){
+    app.use(sassMiddleware({
+        src: path.join(__dirname, env.asset_path, 'scss'),
+        dest: path.join(__dirname,env.asset_path, 'css'),
+        debug: true,
+        outputStyle: 'extended',
+        prefix: '/css'
+    }));
+}
 
 app.use(express.urlencoded());  
 
@@ -49,6 +51,9 @@ app.use(express.static(env.asset_path));
 
 // make the uploads path available to the browser
 app.use('/uploads',express.static(__dirname + '/uploads'));
+
+// using logger middleware
+app.use(logger(env.morgan.mode, env.morgan.options));
 
 app.use(expressLayouts);
 

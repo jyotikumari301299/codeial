@@ -1,0 +1,4 @@
+[0mGET / [32m200[0m 209.663 ms - 8964[0m
+[0mGET /users/sign-in [36m304[0m 19.635 ms - -[0m
+[0mPOST /users/create-session [36m302[0m 277.390 ms - 46[0m
+[0mGET / [32m200[0m 90.787 ms - 13146[0m

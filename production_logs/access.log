@@ -2,3 +2,12 @@
 [0mGET /users/sign-in [36m304[0m 19.635 ms - -[0m
 [0mPOST /users/create-session [36m302[0m 277.390 ms - 46[0m
 [0mGET / [32m200[0m 90.787 ms - 13146[0m
+[0mGET / [32m200[0m 221.370 ms - 8964[0m
+[0mGET / [36m304[0m 123.536 ms - -[0m
+[0mGET / [36m304[0m 65.916 ms - -[0m
+[0mGET /users/sign-in [36m304[0m 13.279 ms - -[0m
+[0mGET /users/auth/google [36m302[0m 13.445 ms - 0[0m
+[0mGET /users/auth/google/callback?code=4%2F0AY0e-g6xPwwU536db-we3AfUblPwEK_9QklYcH_yJVs5hzIOC2IyBAslztfzj3jSdvieVA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent [36m302[0m 842.413 ms - 46[0m
+[0mGET / [32m200[0m 85.750 ms - 12331[0m
+[0mGET / [32m200[0m 97.746 ms - 12067[0m
+[0mGET / [32m200[0m 243.300 ms - 12067[0m
